@@ -129,7 +129,7 @@ export default function App() {
           <section id="contact" className="contact-section">
             <SectionLabel number="05 /">Have a good problem?</SectionLabel>
             <div className="contact-main"><h2>Let's make<br /><span>it work.</span></h2><a className="contact-circle" href="mailto:hello@example.com" aria-label="Send an email"><ArrowUpRight size={34} /></a></div>
-            <div className="contact-bottom"><p>Open to backend engineering opportunities, interesting collaborations and conversations about building better software.</p><div className="social-links"><a href="mailto:abhishekp9991999@gmail.com"><Mail size={16} /> Email</a><a href="https://github.com/abhishek-p-au16" target="_blank" rel="noreferrer"><Github size={16} /> GitHub</a><a href="https://www.linkedin.com/in/abhishek-p-118a5b1b9" target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn</a></div></div>
+            <div className="contact-bottom"><p>Open to backend engineering opportunities, interesting collaborations and conversations about building better software.</p><div className="social-links"><a href="mailto:abhishekp9991999@gmail.com"><Mail size={16} /> Email</a><a href="https://github.com/abhishek-p-au16" target="_blank" rel="noreferrer"><Github size={16} /> GitHub</a><a href="https://www.linkedin.com/in/abhishek-p-118a5b1b9/" target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn</a></div></div>
           </section>
         </main>
         <footer className="site-footer"><a href="#home" className="wordmark">abhishek<span>.dev</span></a><span>Designed & built with care · © {new Date().getFullYear()}</span><a href="#home" className="back-top">BACK TO TOP <ArrowDownRight size={14} /></a></footer>
