@@ -173,13 +173,39 @@ h1 {
 
 .hero-intro { max-width: 490px; margin: 24px 0 0; color: #666; font-size: 14px; line-height: 1.8; }
 .experience-label { color: #999; font: 10px 'DM Mono', monospace; letter-spacing: .04em; text-transform: uppercase; }
-.project-art { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 10%; background: #f1f1ed; position: relative; overflow: hidden; }
+.project-art { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 8%; min-height: 290px; background: #f1f1ed; position: relative; overflow: hidden; isolation: isolate; }
 .project-art::before, .project-art::after { content: ''; position: absolute; border: 1px solid #d9d9d3; border-radius: 50%; width: 260px; height: 260px; right: -80px; top: -90px; }
 .project-art::after { width: 180px; height: 180px; right: -35px; top: -50px; }
-.project-art span, .project-art small, .project-art strong { position: relative; z-index: 1; }
+.project-art > span, .project-art > small, .project-art > strong { position: relative; z-index: 1; max-width: 55%; }
 .project-art span { font: 11px 'DM Mono', monospace; color: #999; }
-.project-art strong { font-size: clamp(23px, 3vw, 36px); letter-spacing: -.06em; margin-top: 18px; }
+.project-art strong { font-size: clamp(22px, 2.8vw, 34px); letter-spacing: -.06em; margin-top: 18px; line-height: 1.05; }
 .project-art small { margin-top: 8px; color: #777; }
+.project-artwork { position: absolute; z-index: 0; right: 5%; top: 50%; transform: translateY(-50%); width: 43%; height: 75%; display: grid; place-items: center; color: #363a37; }
+.artwork-window, .artwork-resume { position: relative; width: min(100%, 230px); min-height: 154px; padding: 14px; background: #fff; border: 1px solid #e4e5df; border-radius: 10px; box-shadow: 0 12px 28px #22222210; transform: rotate(-4deg); }
+.artwork-window-top { display: flex; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid #efefec; }
+.artwork-window-top i { width: 5px; height: 5px; background: #d7d9d2; border-radius: 50%; }
+.artwork-job { display: flex; align-items: center; gap: 9px; margin-top: 12px; }
+.artwork-job > svg { flex: 0 0 auto; color: #697e69; }
+.artwork-job span { display: grid; gap: 4px; }
+.artwork-job b { font-size: 9px; }
+.artwork-job small { font-size: 7px; color: #999; margin: 0; }
+.artwork-lines { display: grid; gap: 5px; margin-top: 12px; }
+.artwork-lines i, .resume-line { display: block; height: 4px; background: #eeefeb; border-radius: 4px; }
+.artwork-lines i:nth-child(1) { width: 85%; }.artwork-lines i:nth-child(2) { width: 62%; }.artwork-lines i:nth-child(3) { width: 74%; }
+.artwork-chip { position: absolute; right: -14px; bottom: 17px; display: flex; align-items: center; gap: 7px; padding: 8px 10px; background: #e6eee5; border: 1px solid #d5e1d3; border-radius: 20px; color: #5d725b; font: 7px 'DM Mono', monospace; box-shadow: 0 5px 14px #2222220d; }
+.artwork-chip strong { font-size: 9px; margin: 0; color: #40573f; }
+.artwork-orbit { position: absolute; width: 150px; height: 150px; border: 1px solid #d7d1d2; border-radius: 50%; }
+.orbit-a { transform: scaleX(.56) rotate(35deg); }.orbit-b { transform: scaleX(.56) rotate(-35deg); }
+.artwork-heart { display: grid; place-items: center; width: 66px; height: 66px; border-radius: 22px; color: #a75f67; background: #f4e5e5; box-shadow: 0 9px 25px #713e4418; transform: rotate(-8deg); }
+.match-chip { right: -1%; bottom: 10%; background: #fff; border-color: #eee1e2; color: #8e5e64; }.match-chip strong { color: #a75f67; font-size: 14px; }
+.artwork-spark { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #d6a0a2; box-shadow: 0 0 0 5px #d6a0a21c; }.spark-a { left: 15%; top: 25%; }.spark-b { right: 12%; top: 35%; width: 6px; height: 6px; }
+.artwork-transfer { display: flex; align-items: center; gap: 10px; padding: 14px; background: #fff; border: 1px solid #e2e5df; border-radius: 16px; box-shadow: 0 12px 28px #22222210; transform: rotate(4deg); }
+.currency { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; font-weight: 800; font-size: 19px; }.currency-from { background: #edf1e7; color: #668052; }.currency-to { background: #e9eef4; color: #627d9b; }
+.transfer-line { display: flex; align-items: center; gap: 4px; color: #788378; }.transfer-line i { width: 4px; height: 4px; border-radius: 50%; background: #b8c2b6; }
+.transfer-chip { right: -2%; bottom: 12%; background: #fff; color: #6c8068; }.transfer-chip strong { color: #59864f; }
+.artwork-resume { min-height: 165px; transform: rotate(3deg); padding: 13px; }.resume-heading { display: flex; align-items: center; gap: 7px; padding-bottom: 9px; border-bottom: 1px solid #eee; color: #63745e; font-size: 8px; letter-spacing: .1em; }
+.resume-line { margin-top: 11px; }.resume-line.long { width: 85%; }.resume-line.medium { width: 60%; margin-top: 6px; }.resume-tags { display: flex; gap: 5px; margin-top: 12px; }.resume-tags i { padding: 4px 6px; border-radius: 10px; background: #eff1eb; color: #727b69; font: normal 6px 'DM Mono', monospace; }
+.resume-check { margin-top: 12px; color: #60805c; font: 7px 'DM Mono', monospace; }
 .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid #e9e9e7; padding-top: 28px; margin-top: 46px; }
 .contact-form label { display: grid; gap: 8px; font-size: 11px; color: #666; }
 .contact-form input, .contact-form textarea { width: 100%; border: 1px solid #e5e5e2; border-radius: 8px; padding: 12px; color: #171717; background: #fff; font: inherit; }
@@ -881,6 +907,17 @@ h1 span,
     .visual-terminal {
         height: 220px;
     }
+
+    .project-art { min-height: 220px; }
+    .project-artwork { right: 3%; width: 42%; height: 74%; }
+    .project-art > span, .project-art > small, .project-art > strong { max-width: 56%; }
+    .project-art strong { font-size: clamp(20px, 5vw, 25px); }
+    .artwork-window, .artwork-resume { min-height: 132px; padding: 10px; }
+    .artwork-job b { font-size: 7px; }.artwork-job small { font-size: 6px; }
+    .artwork-chip { font-size: 6px; padding: 6px 7px; right: -8px; }
+    .artwork-transfer { gap: 5px; padding: 8px; }.currency { width: 31px; height: 31px; font-size: 15px; }
+    .artwork-heart { width: 50px; height: 50px; }
+    .resume-tags { gap: 3px; }.resume-tags i { padding: 3px 4px; font-size: 5px; }
 
     .project-info h3 {
         font-size: 22px;
