@@ -34,11 +34,11 @@ button {
 }
 
 .page-shell {
-    width: min(100% - 48px, 1280px);
+    width: min(100% - 48px, 1480px);
     margin: 0 auto;
     background: #fff;
     min-height: 100vh;
-    padding: 0 8.1%;
+    padding: 0 7%;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .025);
 }
 
@@ -51,6 +51,9 @@ button {
     position: relative;
     z-index: 10;
 }
+
+.desktop-nav { display: flex; align-items: center; gap: 36px; }
+.menu-toggle { display: none; border: 0; background: transparent; padding: 8px; }
 
 .wordmark {
     font-size: 16px;
@@ -118,7 +121,8 @@ button {
     min-height: 690px;
     position: relative;
     display: grid;
-    grid-template-columns: 1.12fr .88fr;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+    column-gap: 28px;
     align-items: center;
     padding: 55px 0 120px;
     overflow: hidden;
@@ -159,13 +163,31 @@ button {
 }
 
 h1 {
-    font-size: clamp(48px, 6.3vw, 88px);
+    font-size: clamp(48px, 5.2vw, 76px);
     line-height: .99;
     letter-spacing: -.085em;
     font-weight: 800;
     margin: 0;
-    white-space: nowrap;
+    white-space: normal;
 }
+
+.hero-intro { max-width: 490px; margin: 24px 0 0; color: #666; font-size: 14px; line-height: 1.8; }
+.experience-label { color: #999; font: 10px 'DM Mono', monospace; letter-spacing: .04em; text-transform: uppercase; }
+.project-art { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 10%; background: #f1f1ed; position: relative; overflow: hidden; }
+.project-art::before, .project-art::after { content: ''; position: absolute; border: 1px solid #d9d9d3; border-radius: 50%; width: 260px; height: 260px; right: -80px; top: -90px; }
+.project-art::after { width: 180px; height: 180px; right: -35px; top: -50px; }
+.project-art span, .project-art small, .project-art strong { position: relative; z-index: 1; }
+.project-art span { font: 11px 'DM Mono', monospace; color: #999; }
+.project-art strong { font-size: clamp(23px, 3vw, 36px); letter-spacing: -.06em; margin-top: 18px; }
+.project-art small { margin-top: 8px; color: #777; }
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid #e9e9e7; padding-top: 28px; margin-top: 46px; }
+.contact-form label { display: grid; gap: 8px; font-size: 11px; color: #666; }
+.contact-form input, .contact-form textarea { width: 100%; border: 1px solid #e5e5e2; border-radius: 8px; padding: 12px; color: #171717; background: #fff; font: inherit; }
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid #aaa; outline-offset: 2px; }
+.message-field, .contact-form button, .form-status { grid-column: 1 / -1; }
+.contact-form textarea { resize: vertical; }
+.contact-form button { justify-self: start; border: 0; cursor: pointer; }
+.form-status { min-height: 18px; margin: -8px 0 0; color: #777; font-size: 11px; }
 
 h1 span,
 .about-grid h2 span,
@@ -207,7 +229,8 @@ h1 span,
 
 .hero-art {
     align-self: center;
-    margin: 25px -25px -25px -10px;
+    margin: 0;
+    min-width: 0;
 }
 
 .hero-footnote {
@@ -711,12 +734,12 @@ h1 span,
 
     .hero-section {
         min-height: 610px;
-        grid-template-columns: 1fr .8fr;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+        column-gap: 12px;
     }
 
     .hero-art {
-        margin-left: -25px;
-        margin-right: -35px;
+        margin: 0;
     }
 
     h1 {
@@ -748,6 +771,9 @@ h1 span,
         height: 70px;
     }
 
+    .desktop-nav, .header-contact { display: none; }
+    .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+
     .hero-section {
         display: flex;
         flex-direction: column;
@@ -759,6 +785,8 @@ h1 span,
     .hero-copy {
         margin: 0;
     }
+
+    .hero-intro { font-size: 13px; }
 
     .eyebrow {
         font-size: 8px;
@@ -904,6 +932,9 @@ h1 span,
         order: 3;
         width: 100%;
     }
+
+    .contact-form { grid-template-columns: 1fr; }
+    .contact-form label, .contact-form button, .form-status { grid-column: 1; }
 
     .back-top {
         margin-left: auto;

@@ -121,23 +121,6 @@ export default function Avatar() {
         />
         <path d="M111 405H329M98 429H342" stroke="#171717" strokeWidth="4" />
       </svg>
-      <div className="absolute -left-4 top-[12%] hidden -translate-x-full -rotate-6 font-hand text-xl text-ink sm:block">
-        hi, I'm Abhishek
-      </div>
-      <svg
-        className="absolute -left-10 top-[19%] hidden w-16 sm:block"
-        viewBox="0 0 70 70"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M3 5C38 8 53 25 57 58M43 47L57 60L65 43"
-          stroke="#171717"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
     </motion.div>
   );
 }
