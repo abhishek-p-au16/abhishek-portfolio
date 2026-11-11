@@ -214,8 +214,10 @@ h1 span,
     transition: transform .2s, box-shadow .2s;
 }
 
-.button:hover {
-    transform: translateY(-3px);
+.button:hover,
+.button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 #171717, 0 9px 18px #00000012;
 }
 
 .button-light {
@@ -224,7 +226,12 @@ h1 span,
 
 .button-dark {
     border: 1px solid #171717;
-    box-shadow: 0 4px 0 #171717, 0 9px 18px #00000012;
+    box-shadow: none;
+}
+
+.button-dark:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 .hero-art {
@@ -783,7 +790,7 @@ h1 span,
     }
 
     .hero-copy {
-        margin: 0;
+        display: contents;
     }
 
     .hero-intro { font-size: 13px; }
@@ -800,7 +807,10 @@ h1 span,
     }
 
     .hero-actions {
+        order: 2;
         margin-top: 27px;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .button {
@@ -809,9 +819,10 @@ h1 span,
     }
 
     .hero-art {
-        width: 78%;
-        align-self: flex-end;
-        margin: 25px -5px -5px 0;
+        order: 1;
+        width: min(78%, 300px);
+        align-self: center;
+        margin: 12px auto 0;
     }
 
     .hero-footnote {
